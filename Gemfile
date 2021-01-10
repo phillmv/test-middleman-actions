@@ -15,3 +15,11 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby, :x64_mingw]
 
 # For faster file watcher updates on Windows:
 gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw, :x64_mingw]
+
+
+gem "commonmarker"
+gem "html-pipeline"
+gem "sanitize", '~> 4.6'
+gem "escape_utils", '~> 1.0'
+gem 'deckar01-task_list'
+

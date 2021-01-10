@@ -1,3 +1,7 @@
+require 'gfm_renderer/gfm_template'
+
+set :markdown_engine, :GFM
+
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 

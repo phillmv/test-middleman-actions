@@ -16,10 +16,16 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    commonmarker (0.21.0)
+      ruby-enum (~> 0.5)
     concurrent-ruby (1.1.7)
     contracts (0.13.0)
+    crass (1.0.6)
+    deckar01-task_list (2.3.1)
+      html-pipeline
     dotenv (2.7.6)
     erubis (2.7.0)
+    escape_utils (1.2.1)
     execjs (2.7.0)
     fast_blank (1.0.0)
     fastimage (2.2.1)
@@ -30,6 +36,9 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.6.0)
+    html-pipeline (2.14.0)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     kramdown (2.3.0)
@@ -76,7 +85,13 @@ GEM
       servolux
       tilt (~> 2.0.9)
       uglifier (~> 3.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.2)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogumbo (1.5.0)
+      nokogiri
     padrino-helpers (0.13.3.4)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.13.3.4)
@@ -85,12 +100,19 @@ GEM
       activesupport (>= 3.1)
     parallel (1.20.1)
     public_suffix (4.0.6)
+    racc (1.5.2)
     rack (2.2.3)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redcarpet (3.3.4)
     rexml (3.2.4)
+    ruby-enum (0.8.0)
+      i18n
+    sanitize (4.6.6)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4)
     sassc (2.4.0)
       ffi (~> 1.9)
     servolux (0.13.0)
@@ -108,10 +130,15 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.0)
+  commonmarker
+  deckar01-task_list
+  escape_utils (~> 1.0)
+  html-pipeline
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   middleman-blog
   redcarpet (~> 3.3, >= 3.3.3)
+  sanitize (~> 4.6)
   tzinfo-data
   wdm (~> 0.1)
 
