@@ -19,7 +19,9 @@ module PipelineFilter
 
     def render_hashtags(str)
       str.gsub(HASHTAG_REGEX) do |match|
-        "<a href=\"#{search_url(match)}\">#{match}</a>"
+
+        context[:scope].link_to match, search_url(match)
+        # "<a href=\"#{search_url(match)}\">#{match}</a>"
       end
     end
 

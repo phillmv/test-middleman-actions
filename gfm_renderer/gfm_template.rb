@@ -1,4 +1,5 @@
 require_relative 'pipeline_filter'
+require 'pry'
 
 class GFMTemplate < ::Tilt::Template
   def prepare
@@ -7,6 +8,6 @@ class GFMTemplate < ::Tilt::Template
   end
 
   def evaluate(scope, locals, &block)
-     PipelineFilter::ENTRY_PIPELINE.to_html(data, {})
+     PipelineFilter::ENTRY_PIPELINE.to_html(data, {scope: scope, locals: locals})
   end
 end
