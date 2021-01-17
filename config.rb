@@ -79,7 +79,8 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
-  activate :relative_assets
+  # activate :relative_assets
   set :http_prefix, '/test-middleman-actions'
+  # set :relative_links, true
 end
 
