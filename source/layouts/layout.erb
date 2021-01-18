@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <title>Blog Title<%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <title></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
@@ -21,17 +21,7 @@
         </div>
       </div>
       <div class="content-container">
-        <% blog.articles[0..10].each do |article| %>
-        <div class="entry-box entry-show">
-          <div class="Box-body border-0 markdown-body js-task-list-container">
-            <div class="entry-body">
-              <h1><%= article.title %></h1>
-              <%= article.body %>
-              <%# <%= yield %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+        <%= yield %>
       </div>
 
       <!-- <aside> -->

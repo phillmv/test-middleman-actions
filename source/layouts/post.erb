@@ -1,0 +1,13 @@
+<% wrap_layout :layout do %>
+  <div class="entry-box entry-show">
+    <div class="Box-body border-0 markdown-body js-task-list-container">
+      <div class="entry-body">
+        <%= link_to current_article.data.identifier, current_article %>
+        <% if current_article.title %>
+          <h1><%= current_article.title %></h1>
+        <% end %>
+        <%= current_article.body %>
+      </div>
+    </div>
+  </div>
+<% end %>

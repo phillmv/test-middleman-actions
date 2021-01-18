@@ -1,4 +1,7 @@
 require 'gfm_renderer/gfm_template'
+require 'gfm_renderer/converter'
+
+Converter.new(".", "./source/entries").process!
 
 set :markdown_engine, :GFM
 
@@ -28,16 +31,18 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # Activate and configure blog extension
-
+activate :directory_indexes
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.permalink = "{title}.html"
+  # blog.permalink = "/{title}.html"
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  # blog.sources = "{year}/{month}/{day}/{title}/{title}.yaml"
+  blog.sources = "entries/{title}.html"
   blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "post"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
@@ -81,6 +86,5 @@ configure :build do
   # activate :minify_javascript
   # activate :relative_assets
   set :http_prefix, '/test-middleman-actions'
-  # set :relative_links, true
 end
 

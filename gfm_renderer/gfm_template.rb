@@ -8,6 +8,6 @@ class GFMTemplate < ::Tilt::Template
   end
 
   def evaluate(scope, locals, &block)
-     PipelineFilter::ENTRY_PIPELINE.to_html(data, {scope: scope, locals: locals})
+    PipelineFilter::ENTRY_PIPELINE.to_html(data, {scope: scope, locals: locals})
   end
 end
